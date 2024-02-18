@@ -1,0 +1,54 @@
+.main_home {
+  padding: 50px 7%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+.button1 {
+  background-color: #016df7;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: Product Sans;
+  font-weight: 400;
+ 
+}
+
+h1{
+    font-family: Product Sans;
+    font-weight: 400;
+    font-size: 64px;
+    color: #00533D;
+}
+
+p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #223141;
+}
+
+button-text {
+    font-size: inherit; /* Inherit font size from parent */
+    font-family: inherit; /* Inherit font family from parent */
+    font-weight: inherit; /* Inherit font weight from parent */
+  }
+
+
+  .h11{
+    font-family: Product Sans;
+    font-weight: 400;
+    font-size: 64px;
+    color: #016df7;
+
+  }

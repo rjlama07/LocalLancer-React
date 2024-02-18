@@ -1,0 +1,73 @@
+.main_div {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  height: 100vh;
+  width: 100;
+}
+
+.banner {
+  display: flex;
+  flex: 2;
+  background: blue;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.login p {
+  font-size: 18px;
+  font-weight: medium;
+  color: #000000;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  height: 143;
+}
+
+.login form {
+  padding: 30px 30px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.login form input {
+  padding: 10px 10px;
+  margin-bottom: 20px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.login form button {
+  padding: 10px 10px;
+  margin-bottom: 20px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  width: 100%;
+  background-color: #00533d;
+  color: white;
+  cursor: pointer;
+
+  font-size: 18px;
+  font-weight: medium;
+}
+
+
+.rememberme{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 300px;
+    
+}

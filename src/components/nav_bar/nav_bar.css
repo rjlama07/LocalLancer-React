@@ -1,0 +1,61 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #fff;
+  
+  padding: 10px 7%;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  flex: 1;
+  text-align: center;
+}
+
+ul li {
+  display: inline-block;
+  margin: 10px 20px;
+}
+
+.button {
+  background: #fb602f;
+  align-items: center;
+  color: #fff;
+  padding: 10px 20px;
+  box-shadow: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  outline: none;
+  border: none;
+}
+
+.button:hover {
+  background: #fb602f;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+ul li a {
+  font-size: 2000 px;
+  text-decoration: none;
+  color: #000;
+  font-size: 16 px;
+  font-weight: 500;
+  font-family: Product Sans;
+}
+
+ul li.active a {
+  color: #fb602f;
+}
+
+ul li :hover {
+    color: #fb602f;
+    opacity: 0.75;
+    transition: 0.3s;
+}
