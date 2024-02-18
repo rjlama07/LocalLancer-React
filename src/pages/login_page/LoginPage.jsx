@@ -2,12 +2,13 @@ import React from 'react'
 
 import './LoginPage.css'
 import logo from '../../assets/logo.png'
+import cover from '../../assets/cover.png'
 
 const LoginPage = () => {
   return (
     <div className='main_div'>
         <div className='banner'>
-            <h1>Banner here</h1>
+        <img src={cover} alt="" className='logo' />
         </div>
         <div className='login'>
             <img src={logo} alt="" className='logo' />
