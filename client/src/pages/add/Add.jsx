@@ -56,6 +56,10 @@ const Add = () => {
     },
     onSuccess: () => {
       queryClient.invalidateQueries(["myGigs"]);
+      //show about dialoge
+      alert("Your file is being uploaded!");
+      Alert.success("Gig created successfully");
+      navigate("/mygigs");
     },
   });
 

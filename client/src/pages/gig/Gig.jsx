@@ -5,6 +5,8 @@ import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import Reviews from "../../components/reviews/Reviews";
+import KhaltiCheckout from "khalti-checkout-web";
+import myKey from "../../components/khalti/khaltiKey";
 
 function Gig() {
   const { id } = useParams();
@@ -31,6 +33,51 @@ function Gig() {
       }),
     enabled: !!userId,
   });
+
+  const handleContinue = () => {
+    let config = {
+      // replace this key with yours
+      publicKey: myKey.publicTestKey,
+      productIdentity: "1234567890",
+      productName: "Drogon",
+      productUrl: "http://gameofthrones.com/buy/Dragons",
+      eventHandler: {
+        onSuccess(payload) {
+          // hit merchant api for initiating verfication
+          console.log(payload);
+          const gigDetails = {
+            userId: data.userId,
+            isCompleted: true,
+            // Add more gig details as needed
+          };
+          newRequest.post(`/orders/${id}`, gigDetails).then((res) => {});
+
+          // hit merchant api for initiating verification
+          console.log("Payment Success:", payload);
+          console.log("Gig Details:", gigDetails);
+        },
+        // onError handler is optional
+        onError(error) {
+          // handle errors
+          console.log(error);
+        },
+        onClose() {
+          console.log("widget is closing");
+        },
+      },
+      paymentPreference: [
+        "KHALTI",
+        "EBANKING",
+        "MOBILE_BANKING",
+        "CONNECT_IPS",
+        "SCT",
+      ],
+    };
+
+    let checkout = new KhaltiCheckout(config);
+    checkout.show({ amount: 1000 });
+    // Add your logic here
+  };
 
   return (
     <div className="gig">
@@ -156,9 +203,8 @@ function Gig() {
                 </div>
               ))}
             </div>
-            <Link to={`/pay/${id}`}>
-            <button>Continue</button>
-            </Link>
+
+            <button onClick={handleContinue}>Continue</button>
           </div>
         </div>
       )}

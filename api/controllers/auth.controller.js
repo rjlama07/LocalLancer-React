@@ -12,6 +12,7 @@ export const register = async (req, res, next) => {
     // Hash the password using bcrypt
     const hash = bcrypt.hashSync(req.body.password, 5);
     // Create a new user instance with hashed password
+    console.log(req.body);
     const newUser = new User({
       ...req.body,
       password: hash,
@@ -44,7 +45,7 @@ export const login = async (req, res, next) => {
         id: user._id,
         isSeller: user.isSeller,
       },
-      '586ab63d048a1d69a43ba9d1a4c4693a'
+      "586ab63d048a1d69a43ba9d1a4c4693a"
     );
 
     const { password, ...info } = user._doc;
